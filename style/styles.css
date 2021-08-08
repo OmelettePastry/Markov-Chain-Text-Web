@@ -1,27 +1,41 @@
 h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
     text-align: center;
 }
 
-.textLabel {
+#text-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-textarea {
+#input-text {
     display: block;
-    font-family: monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: auto;
     margin-right: auto;
+    font-size: 14px;
 }
 
-.outputText {
+#output-text {
     display: flex;
-    font-family: monospace;
-    font-size: 1.25em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
     font-weight: normal;
     justify-content: center;
     align-items: center;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+
+#create-text-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgrey;
+    padding: 6px 6px 6px 6px;
+    border: 0px;
 }
 
 .center {

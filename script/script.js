@@ -1,6 +1,6 @@
-const createTextButton = document.querySelector('.createText');
-const ourTextBox = document.querySelector('.textBox');
-const outputText = document.querySelector('.outputText');
+const createTextButton = document.querySelector('#create-text-button');
+const ourTextBox = document.querySelector('#input-text');
+const outputText = document.querySelector('#output-text');
 
 createTextButton.addEventListener('click', createMarkovText);
 

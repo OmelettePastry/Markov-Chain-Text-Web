@@ -8,12 +8,12 @@
 
     <body>
         <h1>Markov Chain - Text Generator</h1>
-        <p><label class="textLabel" for="Your Text">Your Text</label></p>
-        <p><textarea class="textBox" id="Your Text" name="userText" rows="12" cols="75"></textarea></p>
-        <p class="outputText"></p>
+        <p><label id="text-label" for="Your Text"><u>Your Text</u></label></p>
+        <p><textarea id="input-text" name="userText" rows="12" cols="75"></textarea></p>
+        <div id="output-text"></div>
         <p>
-            <div class="center">
-                <button class="createText" type="button">Create Text</button>
+            <div class="center" id="create-text-area">
+                <button id="create-text-button" type="button">Create Text</button>
             </div>
         </p>
         <script src="script/script.js"></script>
