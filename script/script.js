@@ -170,12 +170,26 @@ function createMarkovText() {
     let ourText = ourTextBox.value;
     let sentence = "";
     let wordDict = getWords(ourText);
+    let capitalized = false;
 
     keys = Object.keys(wordDict);
+
+    for (key in keys) {
+        if ((key.charCodeAt(0) >= 65) && (key.charCodeAt(0) <= 90)) {
+            capitalized = true;
+        }
+    }
+
     let word = keys[Math.floor(Math.random() * keys.length)];
 
-    while (!(word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90)) {
-        word = keys[Math.floor(Math.random() * keys.length)];
+    if (capitalized) {
+        while (!(word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90)) {
+            word = keys[Math.floor(Math.random() * keys.length)];
+        }
+    } else {
+        while (!(word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90) && !(word.charCodeAt(0) >= 97 && word.charCodeAt(0) <= 122)) {
+            word = keys[Math.floor(Math.random() * keys.length)];
+        }
     }
 
     sentence += word;
@@ -196,7 +210,7 @@ function createMarkovText() {
         if (isPunc(word) || word === "--") {
             sentence += word;
         }
-        else if (word != "" && word != " ") {
+        else if (word != "" && word != " " && word != undefined) {
             if (prevWord == "--") {
                 sentence += word;
             }
@@ -209,13 +223,14 @@ function createMarkovText() {
             periodCounter++;
         }
 
-        if (periodCounter > 0) {
+        if ((periodCounter > 0) || (word == undefined)) {
             end = true;
         }
 
         prevWord = word;
 
-        outputText.textContent = sentence;
-        outputText.style.visibility = 'visible';
     }
+
+    outputText.textContent = sentence;
+    outputText.style.visibility = 'visible';
 }
