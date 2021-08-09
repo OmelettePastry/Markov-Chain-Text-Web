@@ -172,23 +172,24 @@ function createMarkovText() {
     let wordDict = getWords(ourText);
     let capitalized = false;
 
-    keys = Object.keys(wordDict);
+    ourKeys = Object.keys(wordDict);
 
-    for (key in keys) {
-        if ((key.charCodeAt(0) >= 65) && (key.charCodeAt(0) <= 90)) {
+    for (let i = 0; i < ourKeys.length; i++) {
+        ourKey = ourKeys[i];
+        if ((ourKey.charCodeAt(0) >= 65) && (ourKey.charCodeAt(0) <= 90)) {
             capitalized = true;
         }
     }
 
-    let word = keys[Math.floor(Math.random() * keys.length)];
+    let word = ourKeys[Math.floor(Math.random() * ourKeys.length)];
 
     if (capitalized) {
         while (!(word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90)) {
-            word = keys[Math.floor(Math.random() * keys.length)];
+            word = ourKeys[Math.floor(Math.random() * ourKeys.length)];
         }
     } else {
         while (!(word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90) && !(word.charCodeAt(0) >= 97 && word.charCodeAt(0) <= 122)) {
-            word = keys[Math.floor(Math.random() * keys.length)];
+            word = ourKeys[Math.floor(Math.random() * ourKeys.length)];
         }
     }
 
