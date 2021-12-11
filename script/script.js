@@ -123,7 +123,7 @@ function getNextItem(ourText, index) {
             }
         }
     }
-    
+
     return [word, index];
 }
 
@@ -237,7 +237,7 @@ function createMarkovText() {
     }
 
     // choose a random key ??
-    // let word = ourKeys[Math.floor(Math.random() * ourKeys.length)];
+    let word = ourKeys[Math.floor(Math.random() * ourKeys.length)];
 
     // Retrieves a naturally capitalized word (if it exists), otherwise choose a random word
     if (capitalized) {
